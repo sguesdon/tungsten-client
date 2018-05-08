@@ -25,6 +25,7 @@ import { AnalyticsModule } from '~/app/framework/analytics/analytics.module';
 
 // module
 import { HeaderComponent } from '~/app/layout/header.component';
+import { MenuComponent } from '~/app/layout/menu.component';
 import { MainComponent } from '~/app/layout/main.component';
 import { LoginComponent } from '~/app/login/login.component';
 import { AppComponent } from './app.component';
@@ -88,6 +89,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
   ],
   declarations: [
     HeaderComponent,
+    MenuComponent,
     MainComponent,
     LoginComponent,
     AppComponent
