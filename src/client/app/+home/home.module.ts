@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import {MatChipsModule} from '@angular/material/chips';
 
 // libs
 // TODO: ngx-i18n-router
@@ -22,7 +23,8 @@ import { HomeComponent } from './home.component';
     // I18NRouterModule.forChild(routes, 'home')
     RouterModule.forChild(routes),
     MaterialModule,
-    SharedModule
+    SharedModule,
+    MatChipsModule
   ],
   declarations: [HomeComponent]
 })

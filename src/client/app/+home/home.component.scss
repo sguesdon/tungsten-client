@@ -7,3 +7,25 @@
   background-image: url('https://avatars3.githubusercontent.com/u/19705696');
   background-size: cover;
 }
+
+mat-card {
+
+    margin-bottom:15px;
+
+    &:last-child{
+        margin-bottom:0px;
+    }
+
+    .mat-card-avatar {
+        background-color: #ddd;
+        text-align:center;
+        mat-icon {
+            margin-top:8px;
+        }
+    }
+
+    mat-chip[ng-reflect-color="green"] {
+        background-color:#00d149;
+        color:white;
+    }
+}
