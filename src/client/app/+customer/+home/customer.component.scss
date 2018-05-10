@@ -1,0 +1,13 @@
+@import '../../../assets/sass/variables';
+@import '../../../assets/sass/mixins';
+
+@include page--shared;
+
+.customer-component {
+    > mat-chip-list {
+        margin-bottom:20px;
+        > mat-chip {
+            margin:8px;
+        }
+    }
+}
