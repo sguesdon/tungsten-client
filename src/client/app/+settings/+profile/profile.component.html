@@ -1,0 +1,14 @@
+<div class="profile-component">
+    <h3>Informations générales</h3>
+    <mat-form-field>
+        <input matInput placeholder="Prénom">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Nom">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Langue">
+            <mat-option *ngFor="let language of availableLanguages" value="{{language.code}}">{{language.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

@@ -9,7 +9,11 @@ import { BaseComponent } from '~/app/framework/core/core.module';
     styleUrls: ['main.component.scss']
 })
 export class MainComponent extends BaseComponent {
+    opened: boolean = true;
   onActivate(event$: any, scrollContainer: any): void {
     scrollContainer.scrollTop = 0;
+  }
+  onMenuButtonClick() {
+      this.opened = !this.opened;
   }
 }

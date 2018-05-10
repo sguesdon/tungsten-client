@@ -1,6 +1,6 @@
 {
-  "APP_NAME": "ng-seed/universal",
-  "DEFAULT_TITLE": "showcasing the ng-seed app",
+  "APP_NAME": "Tungsten",
+  "DEFAULT_TITLE": "Tungsten",
   "DEFAULT_META_DESCRIPTION": "ng-seed is an open-source seed project for Angular Universal",
   "PUBLIC.LOGIN.PAGE_TITLE": "Log in",
   "PUBLIC.LOGIN.META_DESCRIPTION": "",

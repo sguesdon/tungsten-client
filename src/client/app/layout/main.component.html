@@ -1,9 +1,24 @@
-<div fxLayout="column" fxFlex>
-    <app-menu></app-menu>
-    <app-header></app-header>
-    <div class="content-container" #scrollContainer [perfectScrollbar]>
-        <div class="content">
-            <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
-        </div>
-    </div>
-</div>
+<mat-sidenav-container class="content-container example-container" #scrollContainer [perfectScrollbar]>
+    <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
+        <mat-toolbar class="mat-elevation-z2" color="primary" style="overflow:hidden"></mat-toolbar>
+        <mat-list fxFlex>
+            <mat-list-item style="margin:0px 24px 0px 0px">
+                <mat-icon mat-list-icon>person</mat-icon>
+                <h4 mat-line>Clients</h4>
+                <p mat-line>12 clients</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item style="margin:0px 24px 0px 0px">
+                <mat-icon mat-list-icon>folder</mat-icon> Pepper
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item style="margin:0px 24px 0px 0px">
+                <mat-icon mat-list-icon>folder</mat-icon> Pepper
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (menuState)="onMenuButtonClick($event)"></app-header>
+        <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

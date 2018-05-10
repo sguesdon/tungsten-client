@@ -1,0 +1,9 @@
+.profile-component {
+  display: flex;
+  flex-direction: column;
+  margin:15px
+}
+
+.profile-component > * {
+  width: 100%;
+}

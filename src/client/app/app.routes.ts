@@ -31,12 +31,8 @@ export const routes: Routes = [
         loadChildren: './+home/home.module#HomeModule'
       },
       {
-        path: 'about',
-        loadChildren: './+about/about.module#AboutModule'
-      },
-      {
-        path: 'secure-page',
-        loadChildren: './+secure/secure.module#SecureModule'
+        path: 'settings',
+        loadChildren: './+settings/settings.module#SettingsModule'
       }
     ],
     canActivateChild: [MetaGuard],

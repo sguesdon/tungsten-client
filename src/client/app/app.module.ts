@@ -31,6 +31,10 @@ import { LoginComponent } from '~/app/login/login.component';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 export const REQ_KEY = makeStateKey<string>('req');
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppressScrollX: true};
@@ -85,7 +89,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
           settings: {}
         }
       }
-    ])
+    ]),
+    MatSidenavModule,
+    MatListModule,
+    MatAutocompleteModule
   ],
   declarations: [
     HeaderComponent,
