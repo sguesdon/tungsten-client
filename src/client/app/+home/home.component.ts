@@ -5,16 +5,14 @@ import { Component } from '@angular/core';
 import { BaseComponent } from '~/app/framework/core/core.module';
 
 // app
-import { routeAnimation } from '~/app/app.animations';
 import { Actuality } from './models/actuality';
 
 @Component({
   templateUrl: './home.component.html',
-  styleUrls: ['home.component.scss'],
-  animations: [routeAnimation]
+  styleUrls: ['home.component.scss']
 })
 export class HomeComponent extends BaseComponent {
-    news: array<Actuality> = [];
+    news: Array<Actuality> = [];
     constructor() {
         super();
         this.news = [
