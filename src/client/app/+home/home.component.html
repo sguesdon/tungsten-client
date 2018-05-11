@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column" align="center" [@routeAnimation]>
+<div class="container" fxLayout="column" align="center">
     <mat-card fxFlex align="left" *ngFor="let actuality of news">
         <mat-card-header>
             <div mat-card-avatar><mat-icon mat-list-icon>{{actuality.icon}}</mat-icon></div>
@@ -9,11 +9,11 @@
             <p>{{actuality.body}}</p>
             <div fxLayout="row">
                 <mat-chip-list>
-                    <mat-chip *ngFor="let tag of actuality.indices" color="{{tag.color}}">{{tag.name}}</mat-chip>
+                    <mat-chip *ngFor="let tag of actuality.indices" [color]="tag.color">{{tag.name}}</mat-chip>
                 </mat-chip-list>
                 <span fxFlex> </span>
                 <mat-chip-list>
-                    <mat-chip *ngFor="let tag of actuality.tags" color="{{tag.color}}">{{tag.name}}</mat-chip>
+                    <mat-chip *ngFor="let tag of actuality.tags" [color]="tag.color">{{tag.name}}</mat-chip>
                 </mat-chip-list>
             </div>
         </mat-card-content>
