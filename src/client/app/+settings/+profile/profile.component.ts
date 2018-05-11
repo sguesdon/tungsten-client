@@ -14,8 +14,8 @@ import { I18NService, Language } from '~/app/framework/i18n/i18n.module';
 export class ProfileComponent extends BaseComponent {
     private availableLanguages: Array<Language>;
     constructor(i18nService : I18NService) {
+        super();
         this.availableLanguages = i18nService.availableLanguages;
         console.log(i18nService);
-        super();
     }
 }
