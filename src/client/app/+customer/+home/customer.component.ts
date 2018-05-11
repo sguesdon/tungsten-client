@@ -1,10 +1,10 @@
 // angular
-import { Component, Tag } from '@angular/core';
+import { Component } from '@angular/core';
+import {FormControl} from '@angular/forms';
 // framework
 import { BaseComponent } from '~/app/framework/core/core.module';
 // app
-import { Customer } from '../models/customer';
-
+import { Customer, Tag } from '../models/customer';
 
 @Component({
   templateUrl: './customer.component.html',
@@ -13,21 +13,25 @@ import { Customer } from '../models/customer';
 })
 export class CustomerComponent extends BaseComponent {
     customers: Array<Customer> = [];
+    filteredCustomers: Array<Customer> = [];
     tags: Array<Tag> = [];
+    tagSelection: Array<string> = [];
     constructor() {
         super();
+        this.tagSelection = [];
         this.tags = [
             {
                 name: 'Prospect',
-                color:''
+                color: 'primary',
+                selected: false
             },
             {
                 name: 'Abandonniste',
-                color: ''
+                selected: false
             },
             {
                 name: 'Perdu',
-                color: ''
+                selected: false
             }
         ];
         this.customers = [
@@ -50,15 +54,41 @@ export class CustomerComponent extends BaseComponent {
                         color: ''
                     },
                     {
-                        name: 'A rapeller',
+                        name: 'Abandonniste',
                         color: ''
                     }
                 ]
             },
             {
                 denomination: 'TOTAL ACCESS TOURS NORD',
-                raisonSociale: 'SARL DUPONT'
+                raisonSociale: 'SARL DUPONT',
+                tags: [
+                    {
+                        name: 'Prospect',
+                        color: ''
+                    },
+                    {
+                        name: 'Abandonniste',
+                        color: ''
+                    },
+                    {
+                        name: 'Perdu',
+                        color: ''
+                    }
+                ]
             }
-        ]
+        ];
+    }
+
+    onTagSelectionChange() {
+
+    }
+
+    customerFilter(customers) {
+        let filterSumTag = this.getFilterSumTag();
+        return this.customers.filter((customer) => {
+            console.log(filterSumTag, customer.sumTag, customer.sumTag == customer.sumTag & filterSumTag);
+            return (customer.sumTag == customer.sumTag & filterSumTag);
+        });
     }
 }

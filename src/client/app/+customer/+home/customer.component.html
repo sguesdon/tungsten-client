@@ -1,21 +1,72 @@
 <div class="container customer-component" fxLayout="column" align="center" >
-    <mat-chip-list>
-        <mat-chip *ngFor="let tag of tags" color="{{tag.color}}">{{tag.name}}</mat-chip>
-    </mat-chip-list>
-    <mat-card align="left" fxFlex *ngFor="let customer of customers">
-        <mat-card-header>
-            <div mat-card-avatar><mat-icon mat-list-icon></mat-icon></div>
-            <mat-card-title>{{customer.denomination}}</mat-card-title>
-            <mat-card-subtitle>{{customer.raisonSociale}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-            <p></p>
-            <div fxLayout="row">
-                <span fxFlex> </span>
-                <mat-chip-list>
-                    <mat-chip *ngFor="let tag of customer.tags" color="{{tag.color}}">{{tag.name}}</mat-chip>
-                </mat-chip-list>
-            </div>
-        </mat-card-content>
-    </mat-card>
+    <div fxLayout="row" class="toolbar">
+        <mat-chip-list fxFlex [multiple]="true" fxLayoutAlign="start center">
+            <mat-chip
+                *ngFor="let tag of tags"
+                (selectionChange)="onTagSelectionChange($event)"
+                [selected]="tag.selected"
+                (click)="tag.selected=!tag.selected"
+                [color]="tag.color"
+                [value]="tag.name"
+            >
+                <mat-icon>local_offer</mat-icon> {{tag.name}}
+            </mat-chip>
+        </mat-chip-list>
+        <mat-form-field>
+            <mat-select>
+                <mat-option [value]="search_1">Recherche prédéfinie 1</mat-option>
+                <mat-option [value]="search_2">Recherche prédéfinie 2</mat-option>
+                <mat-option [value]="search_3">Recherche prédéfinie 3</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>business</mat-icon>
+            </ng-template>
+            <!-- selection action -->
+            <!-- <mat-form-field>
+                <mat-select>
+                    <mat-select-trigger>
+                        {{'Appliquer&nbsp;à&nbsp;la&nbsp;sélection'}}
+                    </mat-select-trigger>
+                    <mat-option *ngFor="let tag of tags" [value]="tag.name">
+                        <mat-checkbox [indeterminate]="true" (click)="$event.stopPropagation();">{{tag.name}}</mat-checkbox>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field> -->
+            <mat-card align="left" fxLayout="column" fxLayoutAlign="start stretch" *ngFor="let customer of customers">
+                <mat-card-header>
+                    <button mat-card-avatar (click)="customer.selected=!customer.selected">
+                        <mat-icon mat-list-icon>{{ ((customer.selected) ? 'done' : 'business') }}</mat-icon>
+                    </button>
+                    <mat-card-title>{{customer.denomination}}</mat-card-title>
+                    <mat-card-subtitle>{{customer.raisonSociale}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p></p>
+                </mat-card-content>
+                <div fxLayout="row">
+                    <span fxFlex></span>
+                    <mat-chip-list>
+                        <mat-chip *ngFor="let tag of customer.tags" color="{{tag.color}}">
+                            <mat-icon>local_offer</mat-icon> {{tag.name}}
+                        </mat-chip>
+                    </mat-chip-list>
+                </div>
+            </mat-card>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>show_chart</mat-icon>
+            </ng-template>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>grid_on</mat-icon>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+
 </div>

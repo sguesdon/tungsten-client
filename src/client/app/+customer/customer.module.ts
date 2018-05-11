@@ -3,10 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {MatChipsModule} from '@angular/material/chips';
-
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
 // libs
-// TODO: ngx-i18n-router
-// import { I18NRouterModule } from '@ngx-i18n-router/core';
 
 // framework
 import { SharedModule } from '~/app/framework/core/shared.module';
@@ -19,13 +22,18 @@ import { CustomerComponent } from './+home/customer.component';
 @NgModule({
   imports: [
     CommonModule,
-    // TODO: ngx-i18n-router
-    // I18NRouterModule.forChild(routes, 'home')
     RouterModule.forChild(routes),
     MaterialModule,
     SharedModule,
-    MatChipsModule
+    MatChipsModule,
+    MatButtonModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatTabsModule
   ],
+  entryComponents: [],
   declarations: [CustomerComponent]
 })
 export class CustomerModule {

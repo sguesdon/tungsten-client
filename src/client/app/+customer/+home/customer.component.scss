@@ -4,10 +4,27 @@
 @include page--shared;
 
 .customer-component {
-    > mat-chip-list {
-        margin-bottom:20px;
-        > mat-chip {
-            margin:8px;
+
+    mat-card {
+        margin-bottom:15px;
+        &:last-child{
+            margin-bottom:5px;
         }
+        &:first-child{
+            margin-top:15px;
+        }
+    }
+
+    .mat-card-avatar {
+        cursor: pointer;
+        background-color: #ddd;
+        text-align:center;
+        mat-icon {
+            margin-top:8px;
+        }
+    }
+
+    .toolbar {
+        margin-bottom:20px;
     }
 }
