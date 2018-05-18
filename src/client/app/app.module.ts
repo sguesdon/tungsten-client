@@ -1,5 +1,5 @@
 // angular
-import { Injector, NgModule } from '@angular/core';
+import { Injector, NgModule, APP_INITIALIZER } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BrowserModule, makeStateKey } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -34,6 +34,9 @@ import { routes } from './app.routes';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import { initializer } from './shared/common/app.init';
 
 export const REQ_KEY = makeStateKey<string>('req');
 
@@ -92,7 +95,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     ]),
     MatSidenavModule,
     MatListModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    KeycloakAngularModule
   ],
   declarations: [
     HeaderComponent,
@@ -106,6 +110,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  },
+  {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
     }
   ],
   exports: [AppComponent],
