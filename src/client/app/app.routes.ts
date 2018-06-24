@@ -37,6 +37,10 @@ export const routes: Routes = [
     {
         path: 'customer',
         loadChildren: './+customer/customer.module#CustomerModule'
+    },
+    {
+        path: 'company',
+        loadChildren: './company/company.module#CompanyModule'
     }
     ],
     canActivateChild: [MetaGuard],

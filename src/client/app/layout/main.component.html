@@ -1,4 +1,4 @@
-<mat-sidenav-container class="content-container example-container" #scrollContainer [perfectScrollbar]>
+<mat-sidenav-container class="content-container example-container" fxFill #scrollContainer [perfectScrollbar]>
     <mat-sidenav mode="side" [(opened)]="opened" fxLayout="column">
         <mat-toolbar class="mat-elevation-z2" color="primary" style="overflow:hidden"></mat-toolbar>
         <mat-list fxFlex>
@@ -33,7 +33,7 @@
             </mat-list-item>
         </mat-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content fxLayout="column" fxFlex fxLayoutAlign="start stretch">
         <app-header (menuState)="onMenuButtonClick($event)"></app-header>
         <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
     </mat-sidenav-content>

@@ -1,5 +1,5 @@
-<div class="container" fxLayout="column" align="center">
-    <mat-card fxFlex align="left" *ngFor="let actuality of news">
+<div class="container" fxLayout="column" fxFill>
+    <mat-card align="left" *ngFor="let actuality of news">
         <mat-card-header>
             <div mat-card-avatar><mat-icon mat-list-icon>{{actuality.icon}}</mat-icon></div>
             <mat-card-title>{{actuality.title}}</mat-card-title>

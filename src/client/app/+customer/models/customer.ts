@@ -1,15 +1,15 @@
 export interface Tag {
     name: string,
-    color: string,
-    selected: boolean
+    color?: string,
+    selected?: boolean
 };
 
 export interface Customer {
   denomination: string;
-  nomEnseigne: string;
-  raisonSociale: string;
+  nomEnseigne?: string;
+  raisonSociale?: string;
   tags: Array<Tag>;
-  selected: boolean;
+  selected?: boolean;
 };
 
 export const initialTag: Tag = {

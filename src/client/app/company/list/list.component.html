@@ -1,0 +1,14 @@
+<div class="company-list-component container">
+    <mat-list>
+        <mat-list-item *ngFor="let company of compagnies" routerLink="/company/{{company._id}}">
+            <mat-icon matListIcon>business</mat-icon>
+            <h3 matLine>{{company.names.firstName}}</h3>
+            <p matLine>
+                <span>{{company.nbCustomer}} Clients</span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+    <button mat-fab class="md-fab md-fab-bottom-right" color="primary" routerLink="/company/create" aria-label="nouveau">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

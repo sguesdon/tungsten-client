@@ -1,0 +1,19 @@
+.company-form-component {
+
+  display: flex;
+  flex-direction: column;
+  margin:15px;
+
+  > * {
+      width: 100%;
+
+  }
+
+  .md-fab-bottom-right {
+      top: auto;
+      right: 20px;
+      bottom: 20px;
+      left: auto;
+      position: fixed;
+  }
+}

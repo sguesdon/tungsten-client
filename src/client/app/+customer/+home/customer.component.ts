@@ -79,16 +79,4 @@ export class CustomerComponent extends BaseComponent {
             }
         ];
     }
-
-    onTagSelectionChange() {
-
-    }
-
-    customerFilter(customers) {
-        let filterSumTag = this.getFilterSumTag();
-        return this.customers.filter((customer) => {
-            console.log(filterSumTag, customer.sumTag, customer.sumTag == customer.sumTag & filterSumTag);
-            return (customer.sumTag == customer.sumTag & filterSumTag);
-        });
-    }
 }

@@ -1,0 +1,19 @@
+<div class="container company-form-component">
+    <div fxLayout="column">
+        <h3>Informations générales</h3>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.names.firstName" placeholder="Dénomination">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.names.secondName" placeholder="Raison sociale">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="company.names.thirdName" placeholder="Enseigne">
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-fab class="md-fab md-fab-bottom-right" color="primary" aria-label="sauvegarder" (click)="save()" >
+            <mat-icon>save</mat-icon>
+        </button>
+    </div>
+</div>
